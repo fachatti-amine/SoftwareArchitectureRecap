@@ -1,6 +1,6 @@
 <?php
 
-namespace DesignPatterns\FactoryPattern;
+namespace src\DesignPatterns\FactoryPattern;
 
 abstract class Account implements CurrencyConversion, OwnerInfo, OpenAccount, MoneyOperation
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace DesignPatterns\FactoryPattern;
+namespace src\DesignPatterns\FactoryPattern;
 
 class BackingService implements MoneyOperation, OwnerInfo, CurrencyConversion , LockableAccount, WithdrawMoneyAccount
 {
