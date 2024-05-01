@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 
 namespace App\DesignPatterns\AdapterPattern;
+require_once '../../../vendor/autoload.php';
 
 readonly class Product
 {
