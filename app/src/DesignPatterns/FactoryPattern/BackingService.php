@@ -1,18 +1,18 @@
 <?php
 declare(strict_types=1);
 
-namespace App\src\DesignPatterns\FactoryPattern;
+namespace App\DesignPatterns\FactoryPattern;
 
-use App\src\DesignPatterns\FactoryPattern\BankingSystem\Account;
-use App\src\DesignPatterns\FactoryPattern\BankingSystem\AccountType;
-use App\src\DesignPatterns\FactoryPattern\BankingSystem\CurrencyConversion;
-use App\src\DesignPatterns\FactoryPattern\BankingSystem\LockableAccount;
-use App\src\DesignPatterns\FactoryPattern\BankingSystem\MoneyOperation;
-use App\src\DesignPatterns\FactoryPattern\BankingSystem\NormalAccount;
-use App\src\DesignPatterns\FactoryPattern\BankingSystem\OpenAccountInfoDto;
-use App\src\DesignPatterns\FactoryPattern\BankingSystem\OwnerInfo;
-use App\src\DesignPatterns\FactoryPattern\BankingSystem\SavingsAccount;
-use App\src\DesignPatterns\FactoryPattern\BankingSystem\WithdrawMoneyAccount;
+use App\DesignPatterns\FactoryPattern\BankingSystem\Account;
+use App\DesignPatterns\FactoryPattern\BankingSystem\AccountType;
+use App\DesignPatterns\FactoryPattern\BankingSystem\CurrencyConversion;
+use App\DesignPatterns\FactoryPattern\BankingSystem\LockableAccount;
+use App\DesignPatterns\FactoryPattern\BankingSystem\MoneyOperation;
+use App\DesignPatterns\FactoryPattern\BankingSystem\NormalAccount;
+use App\DesignPatterns\FactoryPattern\BankingSystem\OpenAccountInfoDto;
+use App\DesignPatterns\FactoryPattern\BankingSystem\OwnerInfo;
+use App\DesignPatterns\FactoryPattern\BankingSystem\SavingsAccount;
+use App\DesignPatterns\FactoryPattern\BankingSystem\WithdrawMoneyAccount;
 
 class BackingService implements MoneyOperation, OwnerInfo, CurrencyConversion , LockableAccount, WithdrawMoneyAccount
 {

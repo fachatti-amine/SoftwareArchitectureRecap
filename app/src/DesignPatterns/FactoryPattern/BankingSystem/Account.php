@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\src\DesignPatterns\FactoryPattern\BankingSystem;
+namespace App\DesignPatterns\FactoryPattern\BankingSystem;
 
 abstract class Account implements CurrencyConversion, OwnerInfo, OpenAccount, MoneyOperation
 {

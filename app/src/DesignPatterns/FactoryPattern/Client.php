@@ -1,9 +1,9 @@
 <?php
 
-namespace App\src\DesignPatterns\FactoryPattern;
+namespace App\DesignPatterns\FactoryPattern;
 
-use App\src\DesignPatterns\FactoryPattern\BankingSystem\AccountType;
-use App\src\DesignPatterns\FactoryPattern\BankingSystem\OpenAccountInfoDto;
+use App\DesignPatterns\FactoryPattern\BankingSystem\AccountType;
+use App\DesignPatterns\FactoryPattern\BankingSystem\OpenAccountInfoDto;
 
 class Client
 {
