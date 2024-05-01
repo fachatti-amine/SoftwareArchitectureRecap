@@ -3,10 +3,21 @@ declare(strict_types=1);
 
 namespace App\src\DesignPatterns\FactoryPattern;
 
+use App\src\DesignPatterns\FactoryPattern\BankingSystem\Account;
+use App\src\DesignPatterns\FactoryPattern\BankingSystem\AccountType;
+use App\src\DesignPatterns\FactoryPattern\BankingSystem\CurrencyConversion;
+use App\src\DesignPatterns\FactoryPattern\BankingSystem\LockableAccount;
+use App\src\DesignPatterns\FactoryPattern\BankingSystem\MoneyOperation;
+use App\src\DesignPatterns\FactoryPattern\BankingSystem\NormalAccount;
+use App\src\DesignPatterns\FactoryPattern\BankingSystem\OpenAccountInfoDto;
+use App\src\DesignPatterns\FactoryPattern\BankingSystem\OwnerInfo;
+use App\src\DesignPatterns\FactoryPattern\BankingSystem\SavingsAccount;
+use App\src\DesignPatterns\FactoryPattern\BankingSystem\WithdrawMoneyAccount;
+
 class BackingService implements MoneyOperation, OwnerInfo, CurrencyConversion , LockableAccount, WithdrawMoneyAccount
 {
 
-    public static function openAccount(OpenAccountInfoDto $infoDto): Account
+    public function openAccount(OpenAccountInfoDto $infoDto): Account
     {
         return match ($infoDto->type) {
             AccountType::NORMAL => new NormalAccount(
@@ -22,14 +33,16 @@ class BackingService implements MoneyOperation, OwnerInfo, CurrencyConversion , 
         };
     }
 
-    public function transferMoneyTo(Account $accountOwner, int $amountInCents): bool
+    public function transferMoneyTo(Account $to, int $amountInCents): bool
     {
         // TODO: Implement transferMoneyTo() method.
+        return true;
     }
 
     public function receiveMoneyFrom(Account $senderAccount, int $amountInCents): bool
     {
         // TODO: Implement receiveMoneyFrom() method.
+        return true;
     }
 
     public function getBalanceInEuros(): float

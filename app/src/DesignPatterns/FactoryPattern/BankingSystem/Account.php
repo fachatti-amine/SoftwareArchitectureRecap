@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\src\DesignPatterns\FactoryPattern;
+namespace App\src\DesignPatterns\FactoryPattern\BankingSystem;
 
 abstract class Account implements CurrencyConversion, OwnerInfo, OpenAccount, MoneyOperation
 {
@@ -28,10 +28,10 @@ abstract class Account implements CurrencyConversion, OwnerInfo, OpenAccount, Mo
         return $account;
     }
 
-    public function transferMoneyTo(Account $accountOwner, int $amountInCents): bool
+    public function transferMoneyTo(Account $to, int $amountInCents): bool
     {
 
-        if ($this === $accountOwner) {
+        if ($this === $to) {
             // TODO implement slow clap 👏
             return false;
         }
@@ -43,9 +43,9 @@ abstract class Account implements CurrencyConversion, OwnerInfo, OpenAccount, Mo
             return false;
         }
 
-        $accountOwner->receiveMoneyFrom(senderAccount: $this, amountInCents: $amountInCents);
+        $to->receiveMoneyFrom(senderAccount: $this, amountInCents: $amountInCents);
 
-        echo sprintf('Transferred %.2f€ to %s', $amountInCents/100, $accountOwner);
+        echo sprintf('Transferred %.2f€ to %s', $amountInCents/100, $to);
 
         return true;
     }
